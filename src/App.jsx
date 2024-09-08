@@ -14,20 +14,39 @@ import Transactions from "./pages/Transactions";
 import Navbar from "./components/Navbar";
 
 function App() {
+
+  const onclick = async () => {
+    let [tab] = await chrome.tabs.query({ active: true });
+
+    if (tab.id !== undefined) {
+      chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        func: () => {
+          alert("Welcome to BlockGuard Wallet");
+        }
+      });
+    } else {
+      console.error("Failed to get the active tab ID.");
+    }
+  };
+  
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/wallet" element={<Wallet />} />
-        <Route path="/transactions" element={<Transactions />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/seed-phrase" element={<SeedPhrase />} />
-        <Route path="/welcome" element={<Welcome />} />
-      </Routes>
-    </Router>
+    <div className="bg-primary-950 w-[350px] h-[600px] overflow-hidden">
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          {/* <Route path="/wallet" element={<Wallet />} /> */}
+          <Route path="/transactions" element={<Transactions />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/seed-phrase" element={<SeedPhrase />} />
+          <Route path="/welcome" element={<Welcome />} />
+        </Routes>
+        <Navbar />
+    </div>
+  </Router>
+  
   );
 }
 
