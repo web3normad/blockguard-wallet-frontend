@@ -1,19 +1,29 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
+import { useState } from "react"; 
+import Home from "./pages/Home/Home";
 import Welcome from "./pages/Welcome";
 import SeedPhrase from "./pages/SeedPhrase";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Settings from "./pages/Settings";
 import Transactions from "./pages/Transactions";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
+import Exchange from "./pages/Exchange";
+import Statistics from "./pages/Statistics";
+import Header from "./components/Header";
+import Send from "./pages/Home/Send";
+import Receive from "./pages/Home/Receive";
+
 
 function App() {
+  const [isLightMode, setIsLightMode] = useState(false);
+
+  // Function to toggle between dark and light mode
+  const toggleTheme = () => {
+    setIsLightMode(!isLightMode);
+    document.body.classList.toggle("light", !isLightMode); 
+  };
 
   const onclick = async () => {
     let [tab] = await chrome.tabs.query({ active: true });
@@ -29,14 +39,19 @@ function App() {
       console.error("Failed to get the active tab ID.");
     }
   };
-  
+
   return (
     <Router>
-    <div className="bg-primary-950 w-[350px] h-[600px] overflow-hidden">
+      <div className={`w-[350px] h-[600px] overflow-hidden ${isLightMode ? "bg-gray-100 text-primary-950" : "bg-primary-950"}` }>
+        <Header isLightMode={isLightMode} toggleTheme={toggleTheme} />
         <Routes>
-          <Route path="/home" element={<Home />} />
-          {/* <Route path="/wallet" element={<Wallet />} /> */}
+        <Route path="/" element={<Home />} />
+          <Route path="/send-receive" element={<Home />} />
+          <Route path="/send-token" element={<Send />} />
+          <Route path="/receive-token" element={<Receive />} />
           <Route path="/transactions" element={<Transactions />} />
+          <Route path="/exchange" element={<Exchange />} />
+          <Route path="/statistics" element={<Statistics />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
@@ -44,9 +59,8 @@ function App() {
           <Route path="/welcome" element={<Welcome />} />
         </Routes>
         <Navbar />
-    </div>
-  </Router>
-  
+      </div>
+    </Router>
   );
 }
 

@@ -4,11 +4,12 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  lightMode:"class",
   theme: {
     extend: {
       colors: {
         primary:{
-          50 : "#ce04fa",
+          50 : "#FF2CDF",
           100: "#1610c8",
           200: "#5a0bda",
           300: "#a706f0",
