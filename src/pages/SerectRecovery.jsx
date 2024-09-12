@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SerectRocovery = () => {
+const SerectRecovery = () => {
   return (
     <div className="mt-8">
       <h3 className="text-white  text-center text-[18px]">
@@ -111,4 +111,4 @@ const SerectRocovery = () => {
     </div>
   );
 };
-export default SerectRocovery;
+export default SerectRecovery;
