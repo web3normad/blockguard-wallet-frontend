@@ -1,53 +1,31 @@
-// import React from "react";
-import { useState } from "react";
-import arrow from "../assets/images/arrow.svg";
-import { useNavigate } from "react-router-dom";
+import React from 'react'
 
-const ConfirmPhrase = () => {
-
-  const [inputValue, setInputValue] = useState("");
-  // eslint-disable-next-line no-unused-vars
-  const handleInputChange =(e) =>{
-    setInputValue(e.target.value);
-  }
-  const handleSubmit = (e) =>{
-    e.preventDefault();
-    console.log("Input value Submitted", inputValue);
-    setInputValue("");
-  }
-  const navigate = useNavigate();
-
-  const goBack = () => {
-    navigate(-1);
-  };
-
+const SerectRocovery = () => {
   return (
     <div className="mt-8">
-      <div className="flex gap-1 items-center">
-        <button onClick={goBack} className="flex items-center">
-          <img src={arrow} alt="arrow" />
-        </button>
-        <h3 className="text-white text-center text-[18px]">
-          Confirm Secret Recovery Phrase
-        </h3>
-      </div>
-
-      <h2 className="text-[#FF2CDF] mt-20 text-center">
-        confirm secret recovery phrase
+      <h3 className="text-white  text-center text-[18px]">
+      Write down your Secret Recovery Phrase
+      </h3>
+      <h2 className="text-white mt-20 text-center">
+      Tips to safeguarding your secret recovery phases:
       </h2>
-      <form onSubmit={handleSubmit} className="h-[236px] mx-auto mt-8 text-center w-[319px] rounded-[10px]  bg-primary-300">
+      <ul className="list-disc pl-4">
+        <li>Save in a password manager</li>
+        <li>Store in a safe deposit box</li>
+        <li>Write down and store in multiple secret places</li>
+
+        </ul>
+      <div className="h-[236px] mx-auto mt-8 text-center w-[319px] rounded-[10px]  bg-primary-300">
         <div className=" flex justify-between pt-4 mx-4">
           <input
             type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
             className="rounded-lg w-20 text-center placeholder-black "
             placeholder="goat"
           />
           <input
             type="text"
             className="w-20 rounded-lg text-center placeholder-black"
-            placeholder="float"
+            placeholder="flood"
           />
           <input
             type="text"
@@ -59,7 +37,7 @@ const ConfirmPhrase = () => {
           <input
             type="text"
             className="rounded-lg w-20 text-center "
-            placeholder=""
+            placeholder="think"
           />
           <input
             type="text"
@@ -69,7 +47,7 @@ const ConfirmPhrase = () => {
           <input
             type="text"
             className="w-20 rounded-lg text-center"
-            placeholder=""
+            placeholder="stream"
           />
         </div>
         <div className=" flex justify-between pt-8 mx-4">
@@ -81,7 +59,7 @@ const ConfirmPhrase = () => {
           <input
             type="text"
             className="w-20 rounded-lg text-center"
-            placeholder=""
+            placeholder="anchor"
           />
           <input
             type="text"
@@ -106,17 +84,31 @@ const ConfirmPhrase = () => {
             placeholder="block"
           />
         </div>
-      <button type="submit"
-        className=" mt-10
+      </div>
+      <div className="flex justify-between items-center mb-4">
+          <label className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              className="form-checkbox text-pink-500"
+              checked={!showPhrase}
+              onChange={() => setShowPhrase(!showPhrase)}
+            />
+            <span className="text-sm">Hide seed phrase</span>
+          </label>
+          <button className="text-pink-500 text-sm flex items-center space-x-1">
+            <span>Copy to clipboard</span>
+            <span className="material-icons">content_copy</span>
+          </button>
+        </div>
+      <button
+        className=" mt-6 ml-11
        text-white text-lg 
          rounded-3xl px-2 py-1 w-[251px]
         bg-gradient-to-r from-primary-50 to-primary-100 hover:bg-opacity-75"
       >
         Confirm
       </button>
-      </form>
     </div>
   );
 };
-
-export default ConfirmPhrase;
+export default SerectRocovery;

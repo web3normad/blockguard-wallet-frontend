@@ -10,11 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "@react-icons/all-files": "^4.1.0",
+=======
     "ethereum-blockies": "^0.1.1",
     "ionicons": "^7.4.0",
     "jsqr": "^1.4.0",
     "qrcode": "^1.5.4",
     "qrcode.react": "^4.0.1",
+>>>>>>> 626d21da16610502fd5d30279e499ee001012684
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
