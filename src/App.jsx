@@ -8,7 +8,6 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Settings from "./pages/Settings";
 import Transactions from "./pages/Transactions";
-import Navbar from "./components/Navbar";
 import ConfirmPhrase from "./pages/ConfirmPhrase";
 import Navbar from "./components/Navbar/Navbar";
 import Exchange from "./pages/Exchange";
@@ -47,7 +46,7 @@ function App() {
       <div className={`w-[350px] h-[600px] overflow-hidden ${isLightMode ? "bg-gray-100 text-primary-950" : "bg-primary-950"}` }>
         <Header isLightMode={isLightMode} toggleTheme={toggleTheme} />
         <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<ConfirmPhrase />} />
           <Route path="/send-receive" element={<Home />} />
           <Route path="/send-token" element={<Send />} />
           <Route path="/receive-token" element={<Receive />} />
