@@ -19,7 +19,7 @@ const RecoveryGuess = () => {
           <input
             type="text"
             className="w-20 rounded-lg text-center placeholder-black"
-            placeholder="float"
+            placeholder="flood"
           />
           <input
             type="text"
