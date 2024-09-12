@@ -16,7 +16,7 @@ import Header from "./components/Header";
 import Send from "./pages/Home/Send";
 import Receive from "./pages/Home/Receive";
 import SerectRecovery from "./pages/SerectRecovery";
-import SerectRecovery from "./pages/SerectRecoveryHidden";
+import SerectRecoveryHidden from "./pages/SerectRecoveryHidden";
 import RecoveryGuess from "./pages/RecoveryGuess";
 
 
