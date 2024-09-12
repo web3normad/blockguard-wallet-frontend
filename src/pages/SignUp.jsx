@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Logo from "../assets/images/blockguard-logo.png";
-import { generateWallet } from '../utils/walletUtils'; // Import the utility function
+import { generateWallet } from '../utils/walletUtils'; 
 
 const SignUp = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -14,8 +14,8 @@ const SignUp = () => {
   const handleCreateWallet = () => {
   if (isChecked) {
     // Hash the password using CryptoJS
-    const hashedPassword = CryptoJS.SHA256(password).toString();
-    console.log('Hashed Password:', hashedPassword);
+    // const hashedPassword = CryptoJS.SHA256(password).toString();
+    // console.log('Hashed Password:', hashedPassword);
 
     // Proceed to the next page
     navigate('/create-password'); 

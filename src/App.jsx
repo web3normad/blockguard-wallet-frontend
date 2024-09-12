@@ -50,7 +50,7 @@ function App() {
       <div className={`w-[350px] h-[600px] overflow-hidden ${isLightMode ? "bg-gray-100 text-primary-950" : "bg-primary-950"}` }>
         <Header isLightMode={isLightMode} toggleTheme={toggleTheme} />
         <Routes>
-        <Route path="/" element={<SerectRecoveryHidden />} />
+        <Route path="/" element={<Welcome />} />
         <Route path="/login" element={<Login />} />
         <Route path="confirm-phrase" element={<ConfirmPhrase />} />
           <Route path="/send-receive" element={<Home />} />
@@ -65,8 +65,8 @@ function App() {
           <Route path="/ConfirmPhrase" element={<ConfirmPhrase />} />
           <Route path="/seed-phrase" element={<SeedPhrase />} />
           <Route path="/welcome" element={<Welcome />} />
-          <Route path="/serect-recovery" element={<SerectRecovery />} />
-          <Route path="/serect-Recovery-hidden" element={<SerectRecoveryHidden />} />
+          <Route path="/secret-recovery" element={<SerectRecovery />} />
+          <Route path="/secret-Recovery-hidden" element={<SerectRecoveryHidden />} />
           <Route path="/recovery-guess" element={<RecoveryGuess />} />
         </Routes>
         <Navbar />
