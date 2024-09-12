@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   // State to toggle password visibility
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   // Toggle function for password visibility
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
 
   const handleLogin = () => {
-    Navigate('/create-password');
+    navigate('/send-receive');
   };
 
   return (

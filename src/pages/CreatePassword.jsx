@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const CreatePassword = () => {
   // State to toggle password visibility
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate
 
   // Toggle functions
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
@@ -14,7 +15,7 @@ const CreatePassword = () => {
 
   const handleCreateAWallet = () => {
     if (isChecked) {
-      Navigate('/login'); 
+      navigate('/login'); 
     } else {
       alert('Please agree to the terms first.');
     }

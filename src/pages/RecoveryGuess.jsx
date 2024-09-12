@@ -1,6 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const RecoveryGuess = () => {
+  const navigate = useNavigate
+
+  const handleSecretGuess = () =>{
+    navigate ('/send-receive')
+  };
   return (
     <div className="mt-8">
       <h3 className="text-white  text-center text-[18px]">
@@ -84,7 +90,7 @@ const RecoveryGuess = () => {
        text-white text-lg 
          rounded-3xl px-2 py-1 w-[251px]
         bg-gradient-to-r from-primary-50 to-primary-100 hover:bg-opacity-75"
-      >
+      onClick={handleSecretGuess}>
         Next
       </button>
     </div>
