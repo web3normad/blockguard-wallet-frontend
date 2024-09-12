@@ -15,6 +15,7 @@ import Statistics from "./pages/Statistics";
 import Header from "./components/Header";
 import Send from "./pages/Home/Send";
 import Receive from "./pages/Home/Receive";
+import SerectRecovery from "./pages/SerectRecovery";
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
           <Route path="/ConfirmPhrase" element={<ConfirmPhrase />} />
           <Route path="/seed-phrase" element={<SeedPhrase />} />
           <Route path="/welcome" element={<Welcome />} />
+          <Route path="/SerectRecovery" element={<SerectRecovery />} />
         </Routes>
         <Navbar />
       </div>
