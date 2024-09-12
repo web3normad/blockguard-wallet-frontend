@@ -1,16 +1,17 @@
 .input{
   border-width: 0;
-  background-color: rgb(77, 0, 128);
+  background-color: #221F3A;
+  margin-left: 10px;
 }
 .logo{
-  padding: 20px 30px;
+  margin-right: 20px;
 }
 .log{
   display: flex;
   flex-direction: row;
   text-align: center;
   justify-content: center;
-  padding:  10px;
+  /* padding:  10px; */
   /* margin-top: 15px; */
 }
 .link{
@@ -23,15 +24,12 @@
   padding-right: 25px;
 }
 .body{
-  background-color: rgb(77, 0, 128);
+  background-color: #221F3A;
   color: white;
   height: 100vh;
   font-weight: 150;
   text-align: center;
   justify-content: center;
-}
-.img{
-  margin-right: 10px;
 }
 .button{
   padding: 10px 80px;
@@ -39,6 +37,9 @@
   background-color: rgb(62, 19, 119);
   color: white;
   font-weight: 200;
+}
+a{
+  text-decoration: none;
 }
 .button:hover {
   cursor: pointer;

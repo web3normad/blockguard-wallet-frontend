@@ -1,11 +1,11 @@
 import React from 'react';
-import '../components/Login.css';
-import Log from '../assets/images/wallet-logged.png';
-import Message from '../assets/images/Message-icon.png';
-import Logo from '../assets/images/blockguard-logo.png';
+import { Link } from 'react-router-dom';
+import Lock from '../assets/images/locked-icon.png';
+import Message from '../assets/images/message-icon.png';
+import Logo from '../assets/images/blockguard.jpg'
+import '../components/Login.css'
 
-const Login = () => {
-
+export const Login = () => {
   const logoStyle = {
     width: '250px',
     height: '250px',
@@ -14,7 +14,10 @@ const Login = () => {
     width: '25px',
     height: '25px',
   }
-
+  const imageStylle = {
+    width: '35px',
+    height: '35px',
+  }
   return (
     <div className='body'>
       <div className='logo'>
@@ -27,7 +30,7 @@ const Login = () => {
         </div>
         <hr />
         <div className='log'>
-          <img src={Log} style={imageStyle} className='img'/>
+          <img src={Lock} style={imageStylle} className='img'/>
           <input className='input' type="password" placeholder='***********'/>
         </div>
         <hr />
@@ -40,5 +43,3 @@ const Login = () => {
     </div>
   )
 }
-
-export default Login
