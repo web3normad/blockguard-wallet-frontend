@@ -12,6 +12,7 @@ import SignUp from "./pages/SignUp";
 import Settings from "./pages/Settings";
 import Transactions from "./pages/Transactions";
 import Navbar from "./components/Navbar";
+import ConfirmPhrase from "./pages/ConfirmPhrase";
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/ConfirmPhrase" element={<ConfirmPhrase />} />
           <Route path="/seed-phrase" element={<SeedPhrase />} />
           <Route path="/welcome" element={<Welcome />} />
         </Routes>
