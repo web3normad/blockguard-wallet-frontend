@@ -1,6 +1,6 @@
-**BlockGuard Wallet**
+****BlockGuard Wallet****
 
-BlockGuard Wallet is an Ethereum-based browser extension wallet, similar to MetaMask, built using Vite and React. It allows users to manage their Ethereum accounts, send and receive funds, store seed phrases securely, and interact with decentralized applications (dApps).
+**BlockGuard Wallet** is an Ethereum-based browser extension wallet, built using Vite and React. It allows users to manage their Ethereum accounts, send and receive funds, store seed phrases securely, and interact with decentralized applications (dApps).
 
 **Features**
 1. User Authentication:
