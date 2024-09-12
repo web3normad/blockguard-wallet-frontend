@@ -25,7 +25,7 @@ const SerectRocovery = () => {
           <input
             type="text"
             className="w-20 rounded-lg text-center placeholder-black"
-            placeholder="float"
+            placeholder="flood"
           />
           <input
             type="text"
@@ -37,7 +37,7 @@ const SerectRocovery = () => {
           <input
             type="text"
             className="rounded-lg w-20 text-center "
-            placeholder=""
+            placeholder="think"
           />
           <input
             type="text"
@@ -47,7 +47,7 @@ const SerectRocovery = () => {
           <input
             type="text"
             className="w-20 rounded-lg text-center"
-            placeholder=""
+            placeholder="stream"
           />
         </div>
         <div className=" flex justify-between pt-8 mx-4">
@@ -59,7 +59,7 @@ const SerectRocovery = () => {
           <input
             type="text"
             className="w-20 rounded-lg text-center"
-            placeholder=""
+            placeholder="anchor"
           />
           <input
             type="text"
