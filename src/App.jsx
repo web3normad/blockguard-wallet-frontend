@@ -4,8 +4,6 @@ import { useState } from "react";
 import Home from "./pages/Home/Home";
 import Welcome from "./pages/Welcome";
 import SeedPhrase from "./pages/SeedPhrase";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
 import Settings from "./pages/Settings";
 import Transactions from "./pages/Transactions";
 import ConfirmPhrase from "./pages/ConfirmPhrase";
@@ -15,6 +13,9 @@ import Statistics from "./pages/Statistics";
 import Header from "./components/Header";
 import Send from "./pages/Home/Send";
 import Receive from "./pages/Home/Receive";
+import Login from "./components/Login/Login";
+import SignUp from "./pages/SignUp";
+import CreatePassword from "./pages/CreatePassword";
 
 
 function App() {
@@ -46,16 +47,18 @@ function App() {
       <div className={`w-[350px] h-[600px] overflow-hidden ${isLightMode ? "bg-gray-100 text-primary-950" : "bg-primary-950"}` }>
         <Header isLightMode={isLightMode} toggleTheme={toggleTheme} />
         <Routes>
-        <Route path="/" element={<ConfirmPhrase />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="confirm-phrase" element={<ConfirmPhrase />} />
           <Route path="/send-receive" element={<Home />} />
           <Route path="/send-token" element={<Send />} />
           <Route path="/receive-token" element={<Receive />} />
           <Route path="/transactions" element={<Transactions />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/create-password" element={<CreatePassword />} />
           <Route path="/exchange" element={<Exchange />} />
           <Route path="/statistics" element={<Statistics />} />
           <Route path="/settings" element={<Settings />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/sign-in" element={<SignIn />} />
           <Route path="/ConfirmPhrase" element={<ConfirmPhrase />} />
           <Route path="/seed-phrase" element={<SeedPhrase />} />
           <Route path="/welcome" element={<Welcome />} />

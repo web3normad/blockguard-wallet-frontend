@@ -1,19 +1,38 @@
-import React from 'react';
+import React from "react";
+import Logo from "../assets/images/blockguard-logo.png";
+import { Link, useNavigate } from "react-router-dom";
 
 const Welcome = () => {
+  const navigate = useNavigate();
+
+  const handleSignup = () => {
+      navigate("/signup");
+  };
+
   return (
-    <div className="min-h-screen bg-[#12122A] flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center">
       <div className="text-center">
-        <div className="mb-6">
-          <img src="/assets/images/blockguard-logo.png" alt="blockguard logo" className="w-32 h-32 mx-auto" />
+        <div className="flex items-center mt-20">
+          <img src={Logo} alt="blockguard logo" className="w-24 mx-auto" />
         </div>
-        <h1 className="text-3xl text-pink-400 font-bold mb-4">Welcome to blockguard</h1>
-        <p className="text-white mb-6">Sign up and come to the bubble world</p>
-        <div className="space-y-4">
-          <button className="bg-gradient-to-r from-pink-400 to-purple-700 text-white px-6 py-3 rounded-lg text-lg">
+        <h1 className="text-xl text-pink-400 font-semibold mt-10">
+          Welcome to blockguard
+        </h1>
+        <p className="text-white mt-5 break-words">
+          Sign up and come to the blockguard world
+        </p>
+        <div className="space-y-5 mt-10">
+          <button
+            className="bg-gradient-to-r from-primary-50 via-primary-200 to-primary-300 text-primary-400 w-[200px] py-2 rounded-full"
+            onClick={handleSignup}
+          >
             Let's Start
           </button>
-          <p className="text-gray-400">I already have an account</p>
+          <Link to="/login">
+            <p className="text-gray-400 underline mt-4 text-sm">
+              I already have an account
+            </p>
+          </Link>
         </div>
       </div>
     </div>
