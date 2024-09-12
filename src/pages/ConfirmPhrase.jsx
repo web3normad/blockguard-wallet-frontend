@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-const RecoveryGuess = () => {
+const ConfirmPhrase = () => {
   return (
     <div className="mt-8">
       <h3 className="text-white  text-center text-[18px]">
@@ -85,9 +85,10 @@ const RecoveryGuess = () => {
          rounded-3xl px-2 py-1 w-[251px]
         bg-gradient-to-r from-primary-50 to-primary-100 hover:bg-opacity-75"
       >
-        Next
+        Confirm
       </button>
     </div>
   );
 };
-export default RecoveryGuess;
+
+export default ConfirmPhrase;
