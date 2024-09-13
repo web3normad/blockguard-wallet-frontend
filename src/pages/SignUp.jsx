@@ -25,6 +25,7 @@ const SignUp = () => {
 };
 
 
+
   const handleImportWallet = () => {
     if (isChecked) {
       navigate('/import-wallet'); 

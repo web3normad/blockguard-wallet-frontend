@@ -1,25 +1,26 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const RecoveryGuess = () => {
-  const navigate = useNavigate
+  const navigate = useNavigate(); // Fix: call useNavigate as a function
 
-  const handleSecretGuess = () =>{
-    navigate ('/send-receive')
+  const handleGuess = () => {
+    navigate("/send-receive"); // Ensure you invoke navigate as a function
   };
+
   return (
     <div className="mt-8">
-      <h3 className="text-white  text-center text-[18px]">
+      <h3 className="text-white text-center text-[18px]">
         Confirm Secret Recovery Phrase
       </h3>
       <h2 className="text-[#FF2CDF] mt-20 text-center">
         confirm secret recovery phrase
       </h2>
-      <div className="h-[236px] mx-auto mt-8 text-center w-[319px] rounded-[10px]  bg-primary-300">
-        <div className=" flex justify-between pt-4 mx-4">
+      <div className="h-[236px] mx-auto mt-8 text-center w-[319px] rounded-[10px] bg-primary-300">
+        <div className="flex justify-between pt-4 mx-4">
           <input
             type="text"
-            className="rounded-lg w-20 text-center placeholder-black "
+            className="rounded-lg w-20 text-center placeholder-black"
             placeholder="goat"
           />
           <input
@@ -33,10 +34,10 @@ const RecoveryGuess = () => {
             placeholder="ramp"
           />
         </div>
-        <div className=" flex justify-between pt-8 mx-4 ">
+        <div className="flex justify-between pt-8 mx-4">
           <input
             type="text"
-            className="rounded-lg w-20 text-center "
+            className="rounded-lg w-20 text-center"
             placeholder=""
           />
           <input
@@ -50,7 +51,7 @@ const RecoveryGuess = () => {
             placeholder=""
           />
         </div>
-        <div className=" flex justify-between pt-8 mx-4">
+        <div className="flex justify-between pt-8 mx-4">
           <input
             type="text"
             className="rounded-lg w-20 text-center placeholder-black"
@@ -67,7 +68,7 @@ const RecoveryGuess = () => {
             placeholder="demand"
           />
         </div>
-        <div className=" flex justify-between pt-10 mx-4">
+        <div className="flex justify-between pt-10 mx-4">
           <input
             type="text"
             className="rounded-lg w-20 text-center placeholder-black"
@@ -86,14 +87,13 @@ const RecoveryGuess = () => {
         </div>
       </div>
       <button
-        className=" mt-6 ml-11
-       text-white text-lg 
-         rounded-3xl px-2 py-1 w-[251px]
-        bg-gradient-to-r from-primary-50 to-primary-100 hover:bg-opacity-75"
-      onClick={handleSecretGuess}>
+        className="mt-6 ml-11 text-white text-lg rounded-3xl px-2 py-1 w-[251px] bg-gradient-to-r from-primary-50 to-primary-100 hover:bg-opacity-75"
+        onClick={handleGuess}
+      >
         Next
       </button>
     </div>
   );
 };
+
 export default RecoveryGuess;

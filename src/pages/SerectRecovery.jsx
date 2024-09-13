@@ -4,19 +4,30 @@ import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 
 const SecretRecovery = () => {
-  // State to toggle the visibility of the phrases
   const [showPhrase, setShowPhrase] = useState(false);
+  const [copySuccess, setCopySuccess] = useState('');
   const navigate = useNavigate();
 
-  // Example seed phrases; in a real app, these would be dynamically generated
+  // Example seed phrases
   const seedPhrases = [
-    'goat', 'flood', 'ramp', 'think', 'jump', 
-    'stream', 'mother', 'anchor', 'demand', 
+    'goat', 'flood', 'ramp', 'think', 'jump',
+    'stream', 'mother', 'anchor', 'demand',
     'fuse', 'flash', 'block'
   ];
 
   const handleSecretGuess = () => {
     navigate('/recovery-guess');
+  };
+
+  // Function to copy seed phrases to the clipboard
+  const handleCopyToClipboard = () => {
+    const phrases = seedPhrases.join(' ');
+    navigator.clipboard.writeText(phrases)
+      .then(() => {
+        setCopySuccess('Copied!');
+        setTimeout(() => setCopySuccess(''), 2000); // Clear after 2 seconds
+      })
+      .catch(() => setCopySuccess('Failed to copy!'));
   };
 
   return (
@@ -60,14 +71,21 @@ const SecretRecovery = () => {
           )}
           <span className="text-sm">Show seed phrase</span>
         </div>
-        <div className="text-pink-500 text-sm flex items-center space-x-1">
+        <div
+          className="text-pink-500 text-sm flex items-center space-x-1 cursor-pointer"
+          onClick={handleCopyToClipboard}
+        >
           <GoCopy />
           <span>Copy to clipboard</span>
         </div>
       </div>
+      {copySuccess && (
+        <div className="text-green-500 text-sm mb-2">{copySuccess}</div>
+      )}
       <button
         className="mt-2 text-white rounded-full py-2 w-[250px] bg-gradient-to-r from-primary-50 to-primary-100 hover:bg-opacity-75"
-      onClick={handleSecretGuess}>
+        onClick={handleSecretGuess}
+      >
         Next
       </button>
     </div>

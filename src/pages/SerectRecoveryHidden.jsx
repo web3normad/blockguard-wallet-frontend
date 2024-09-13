@@ -7,7 +7,7 @@ const SerectRocoveryHidden = () => {
  
 
   const handleSecretRecovery = () => {
-    navigate('/serect-recovery');
+    navigate('/secret-recovery');
   };
 
   return (

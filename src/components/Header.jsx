@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { IoNotifications } from "react-icons/io5";
 import { AiFillStepBackward } from "react-icons/ai";
-import { Link, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = ({ isLightMode, toggleTheme }) => {
   const location = useLocation();
+  const navigate = useNavigate(); // Use useNavigate to access navigation functionality
   const [notifications, setNotifications] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [notificationId, setNotificationId] = useState(0);
@@ -49,9 +50,10 @@ const Header = ({ isLightMode, toggleTheme }) => {
       {/* Backward Icon */}
       {location.pathname !== "/" && (
         <div className="flex bg-primary-200 p-1 rounded-xl flex-grow-0">
-          <Link to="/" className="text-primary-400">
+          {/* Navigate one step back in the history */}
+          <button onClick={() => navigate(-1)} className="text-primary-400">
             <AiFillStepBackward className="text-xl font-bold" />
-          </Link>
+          </button>
         </div>
       )}
 

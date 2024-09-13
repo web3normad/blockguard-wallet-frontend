@@ -1,32 +1,28 @@
-// import React from "react";
-import { useState } from "react";
-import arrow from "../assets/images/arrow.svg";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ConfirmPhrase = () => {
-
   const [inputValue, setInputValue] = useState("");
-  // eslint-disable-next-line no-unused-vars
-  const handleInputChange =(e) =>{
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
     setInputValue(e.target.value);
-  }
-  const handleSubmit = (e) =>{
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Input value Submitted", inputValue);
     setInputValue("");
-  }
-  const navigate = useNavigate();
+    handleConfirmPhrase(); // Navigate after submission
+  };
 
-  const goBack = () => {
-    navigate(-1);
+  const handleConfirmPhrase = () => {
+    navigate('/send-receive');
   };
 
   return (
     <div className="mt-8">
       <div className="flex gap-1 items-center">
-        <button onClick={goBack} className="flex items-center">
-          <img src={arrow} alt="arrow" />
-        </button>
         <h3 className="text-white text-center text-[18px]">
           Confirm Secret Recovery Phrase
         </h3>
@@ -36,12 +32,12 @@ const ConfirmPhrase = () => {
         confirm secret recovery phrase
       </h2>
       <form onSubmit={handleSubmit} className="h-[236px] mx-auto mt-8 text-center w-[319px] rounded-[10px]  bg-primary-300">
-        <div className=" flex justify-between pt-4 mx-4">
+        <div className="flex justify-between pt-4 mx-4">
           <input
             type="text"
             value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            className="rounded-lg w-20 text-center placeholder-black "
+            onChange={handleInputChange}
+            className="rounded-lg w-20 text-center placeholder-black"
             placeholder="goat"
           />
           <input
@@ -55,10 +51,10 @@ const ConfirmPhrase = () => {
             placeholder="ramp"
           />
         </div>
-        <div className=" flex justify-between pt-8 mx-4 ">
+        <div className="flex justify-between pt-8 mx-4">
           <input
             type="text"
-            className="rounded-lg w-20 text-center "
+            className="rounded-lg w-20 text-center"
             placeholder=""
           />
           <input
@@ -72,7 +68,7 @@ const ConfirmPhrase = () => {
             placeholder=""
           />
         </div>
-        <div className=" flex justify-between pt-8 mx-4">
+        <div className="flex justify-between pt-8 mx-4">
           <input
             type="text"
             className="rounded-lg w-20 text-center placeholder-black"
@@ -89,7 +85,7 @@ const ConfirmPhrase = () => {
             placeholder="demand"
           />
         </div>
-        <div className=" flex justify-between pt-10 mx-4">
+        <div className="flex justify-between pt-10 mx-4">
           <input
             type="text"
             className="rounded-lg w-20 text-center placeholder-black"
@@ -106,14 +102,11 @@ const ConfirmPhrase = () => {
             placeholder="block"
           />
         </div>
-      <button type="submit"
-        className=" mt-10
-       text-white text-lg 
-         rounded-3xl px-2 py-1 w-[251px]
-        bg-gradient-to-r from-primary-50 to-primary-100 hover:bg-opacity-75"
-      >
-        Confirm
-      </button>
+        <button type="submit"
+          className="mt-10 text-white text-lg rounded-3xl px-2 py-1 w-[251px] bg-gradient-to-r from-primary-50 to-primary-100 hover:bg-opacity-75"
+        >
+          Confirm
+        </button>
       </form>
     </div>
   );

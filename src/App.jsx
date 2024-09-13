@@ -3,7 +3,6 @@ import "./App.css";
 import { useState } from "react"; 
 import Home from "./pages/Home/Home";
 import Welcome from "./pages/Welcome";
-import SeedPhrase from "./pages/SeedPhrase";
 import Settings from "./pages/Settings";
 import Transactions from "./pages/Transactions";
 import ConfirmPhrase from "./pages/ConfirmPhrase";
@@ -52,7 +51,7 @@ function App() {
         <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/login" element={<Login />} />
-        <Route path="confirm-phrase" element={<ConfirmPhrase />} />
+        {/* <Route path="/confirm-phrase" element={<ConfirmPhrase />} /> */}
           <Route path="/send-receive" element={<Home />} />
           <Route path="/send-token" element={<Send />} />
           <Route path="/receive-token" element={<Receive />} />
@@ -62,8 +61,7 @@ function App() {
           <Route path="/exchange" element={<Exchange />} />
           <Route path="/statistics" element={<Statistics />} />
           <Route path="/settings" element={<Settings />} />
-          <Route path="/ConfirmPhrase" element={<ConfirmPhrase />} />
-          <Route path="/seed-phrase" element={<SeedPhrase />} />
+          
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/secret-recovery" element={<SerectRecovery />} />
           <Route path="/secret-Recovery-hidden" element={<SerectRecoveryHidden />} />
